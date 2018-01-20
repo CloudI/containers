@@ -1,0 +1,10 @@
+#!/bin/bash
+
+trap "echo TRAPed signal" HUP INT QUIT TERM SIGTERM
+cloudi start
+
+while :; do read;  done
+
+
+
+
