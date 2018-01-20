@@ -9,7 +9,7 @@ integration enabled by default:
 * Javascript
 * Perl
 * PHP
-* Python 3
+* Python
 * Ruby
 
 
