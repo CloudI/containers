@@ -12,7 +12,7 @@ integration enabled by default:
 * Python
 * Ruby
 
-The image is **1.29GB** on `x86_64`.
+The image is **1.29 GB** on `x86_64`.
 
 ## USAGE
 
