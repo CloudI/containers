@@ -62,7 +62,7 @@ RUN curl -fSL -o otp_src.tar.gz \
     && rm -rf "otp_src_${ERLANG_OTP_VERSION}"
 
 # Build and Install CloudI
-# (vm.args needs "+B i" so the Erlang VM will ignore SIGINT)
+# (vm.args uses "+B i" so the Erlang VM will ignore CTRL+C)
 RUN curl -fSL -o cloudi.tar.gz \
     "https://downloads.sourceforge.net/project/cloudi/${CLOUDI_VERSION}/cloudi-${CLOUDI_VERSION}.tar.gz" \
     && echo "${CLOUDI_SHA256}  cloudi.tar.gz" | sha256sum -c - \
