@@ -2,7 +2,7 @@
 
 This image includes all the integration tests and all the programming language
 integration enabled, but without additional programming languages installed
-(other than Erlang).  To add programming languages use:
+(other than C/C++ and Erlang).  To add programming languages use:
 
     docker exec -it cloudi_alpine /bin/sh
     apk add --no-cache go
