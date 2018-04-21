@@ -6,19 +6,19 @@ FROM ubuntu:16.04
 
 # Set the release version of CloudI
 ARG CLOUDI_VERSION
-ENV CLOUDI_VERSION ${CLOUDI_VERSION:-1.7.2}
+ENV CLOUDI_VERSION ${CLOUDI_VERSION:-1.7.3}
 
 # Set the release SHA256 checksum of CloudI
 ARG CLOUDI_SHA256
-ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-5ffeddb4ddabc9611d02fe356022849d2cbb1d1557311651f3f5b42c37ba3d71}
+ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-0a73f9b691c0a274304f601634b68fcd53b1df59eaffd10ccc2061bfe0f21869}
 
 # Set the release version of Erlang/OTP
 ARG ERLANG_OTP_VERSION
-ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-20.2}
+ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-20.3}
 
 # Set the release SHA256 checksum of Erlang/OTP
 ARG ERLANG_OTP_SHA256
-ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-24d9895e84b800bf0145d6b3042c2f2087eb31780a4a45565206844b41eb8f23}
+ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-4e19e6c403d5255531c0b870f19511c8b8e3b080618e4f9efcb44d905935b2a1}
 
 # Update the repository sources list and install required Ubuntu packages
 RUN apt-get update && apt-get install -y \
@@ -64,7 +64,7 @@ RUN curl -fSL -o otp_src.tar.gz \
 # Build and Install CloudI
 # (vm.args uses "+B i" so the Erlang VM will ignore CTRL+C)
 RUN curl -fSL -o cloudi.tar.gz \
-    "https://downloads.sourceforge.net/project/cloudi/${CLOUDI_VERSION}/cloudi-${CLOUDI_VERSION}.tar.gz" \
+    "https://osdn.net/dl/cloudi/cloudi-${CLOUDI_VERSION}.tar.gz" \
     && echo "${CLOUDI_SHA256}  cloudi.tar.gz" | sha256sum -c - \
     && tar zxvf cloudi.tar.gz \
     && rm -f cloudi.tar.gz \

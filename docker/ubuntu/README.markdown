@@ -13,7 +13,7 @@ integration enabled by default:
 * Ruby
 
 The image is **1.29 GB** on `x86_64`.  If you need a smaller image, use the
-[Alpine Linux](https://github.com/CloudI/containers/tree/master/docker/alpine#readme) example.
+[Alpine Linux](https://github.com/CloudI/containers/tree/master/docker/alpine#readme) default image.
 
 ## USAGE
 

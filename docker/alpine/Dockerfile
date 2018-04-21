@@ -4,9 +4,10 @@
 # Set the base image to Alpine
 FROM alpine:3.7
 
-RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+RUN    echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
+    && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && apk --no-cache upgrade \
-    && apk add --no-cache cloudi@testing
+    && apk add --no-cache cloudi
 
 # Use a modified CloudI configuration file based on cloudi_minimal.conf
 COPY conf/cloudi.conf /etc/cloudi/cloudi.conf
