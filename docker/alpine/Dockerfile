@@ -2,12 +2,9 @@
 # ex: set fenc=utf-8 sts=4 ts=4 sw=4 et nomod:
 
 # Set the base image to Alpine
-FROM alpine:3.7
+FROM alpine:3.8
 
-RUN    echo "http://dl-cdn.alpinelinux.org/alpine/v3.8/main" > /etc/apk/repositories \
-    && echo "http://dl-cdn.alpinelinux.org/alpine/v3.8/community" >> /etc/apk/repositories \
-    && apk upgrade --no-cache -U -a \
-    && apk add --no-cache cloudi
+RUN apk add --no-cache cloudi
 
 # Use a modified CloudI configuration file based on cloudi_minimal.conf
 COPY conf/cloudi.conf /etc/cloudi/cloudi.conf
