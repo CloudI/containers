@@ -2,26 +2,26 @@
 # ex: set fenc=utf-8 sts=4 ts=4 sw=4 et nomod:
 
 # Set the base image to Ubuntu
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Set the release version of CloudI
 ARG CLOUDI_VERSION
-ENV CLOUDI_VERSION ${CLOUDI_VERSION:-1.7.3}
+ENV CLOUDI_VERSION ${CLOUDI_VERSION:-1.7.5}
 
 # Set the release SHA256 checksum of CloudI
 ARG CLOUDI_SHA256
-ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-0a73f9b691c0a274304f601634b68fcd53b1df59eaffd10ccc2061bfe0f21869}
+ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-ac0c0753e17eccaed190398adf5e5a3b50f584bd255e2b609a9ec34d783720e6}
 
 # Set the release version of Erlang/OTP
 ARG ERLANG_OTP_VERSION
-ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-20.3}
+ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-21.2}
 
 # Set the release SHA256 checksum of Erlang/OTP
 ARG ERLANG_OTP_SHA256
-ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-4e19e6c403d5255531c0b870f19511c8b8e3b080618e4f9efcb44d905935b2a1}
+ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-f6b07bf8e6705915679a63363ce80faaa6b7c231e7236cde443d6445f7430334}
 
 # Update the repository sources list and install required Ubuntu packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
     autoconf \
     libtool \
@@ -42,8 +42,7 @@ RUN apt-get update && apt-get install -y \
     libboost-system-dev \
     libboost-thread-dev \
     libboost-dev \
-    libgmp3-dev \
-    uuid-dev
+    libgmp3-dev
 
 # Build and Install Erlang/OTP
 RUN curl -fSL -o otp_src.tar.gz \

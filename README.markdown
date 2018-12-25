@@ -3,5 +3,5 @@
 ## Docker
 
 * [Alpine Linux](https://github.com/CloudI/containers/tree/master/docker/alpine#readme) image consumes **276 MB (108 MB compressed)** on `x86_64` (available at [Docker Hub](https://hub.docker.com/r/cloudi/cloudi/))
-* [Ubuntu Linux](https://github.com/CloudI/containers/tree/master/docker/ubuntu#readme) image consumes **1.29 GB** on `x86_64`
+* [Ubuntu Linux](https://github.com/CloudI/containers/tree/master/docker/ubuntu#readme) image consumes **1.49 GB** on `x86_64`
 
