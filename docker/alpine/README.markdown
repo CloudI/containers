@@ -15,8 +15,8 @@ integration enabled, but without additional programming languages installed
     apk add --no-cache python3
     apk add --no-cache ruby
 
-The image is **276 MB** on `x86_64`.  If you install all the programming
-languages, the container will become **1.7 GB** on `x86_64`.
+The image is **292 MB** on `x86_64`.  If you install all the programming
+languages, the container will become **1.35 GB** on `x86_64`.
 
 ## USAGE
 
@@ -29,7 +29,7 @@ The CloudI dashboard is then accessible at
 [http://localhost:6464/cloudi/](http://localhost:6464/cloudi/).
 
 If you need to use the Erlang shell while CloudI is running,
-remember to detach with a CTRL+P+CRTL+Q key sequence:
+remember to detach with a CTRL+P,CRTL+Q key sequence:
 
     docker container attach cloudi_alpine
 
