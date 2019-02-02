@@ -26,7 +26,7 @@ The CloudI dashboard is then accessible at
 [http://localhost:6464/cloudi/](http://localhost:6464/cloudi/).
 
 If you need to use the Erlang shell while CloudI is running,
-remember to detach with a CTRL+P+CRTL+Q key sequence:
+remember to detach with a CTRL+P,CRTL+Q key sequence:
 
     docker container attach cloudi_ubuntu
 
