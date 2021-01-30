@@ -2,23 +2,23 @@
 # ex: set fenc=utf-8 sts=4 ts=4 sw=4 et nomod:
 
 # Set the base image to Ubuntu
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # Set the release version of CloudI
 ARG CLOUDI_VERSION
-ENV CLOUDI_VERSION ${CLOUDI_VERSION:-1.8.0}
+ENV CLOUDI_VERSION ${CLOUDI_VERSION:-2.0.1}
 
 # Set the release SHA256 checksum of CloudI
 ARG CLOUDI_SHA256
-ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-a9b690289d5db6239bfe847d27cfe81f5a05194e9732f45d60344ef95afc4f4d}
+ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-f57db737aa8658a4670cf657828bc08cefe0da723b8fbe21791da7b5f0953998}
 
 # Set the release version of Erlang/OTP
 ARG ERLANG_OTP_VERSION
-ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-21.3}
+ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-23.2}
 
 # Set the release SHA256 checksum of Erlang/OTP
 ARG ERLANG_OTP_SHA256
-ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-69a743c4f23b2243e06170b1937558122142e47c8ebe652be143199bfafad6e4}
+ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-40e03428826c92e409e4f1510f9c0539eafb3ac49d6c2f607f4fa274d11a8928}
 
 # Update the repository sources list and install required Ubuntu packages
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -68,7 +68,7 @@ RUN curl -fSL -o cloudi.tar.gz \
     && tar zxvf cloudi.tar.gz \
     && rm -f cloudi.tar.gz \
     && cd "cloudi-${CLOUDI_VERSION}/src" \
-    && ./configure --with-cxx-backtrace \
+    && ./configure \
     && make \
     && make install \
     && cd .. \

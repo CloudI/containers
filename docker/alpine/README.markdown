@@ -15,8 +15,8 @@ integration enabled, but without additional programming languages installed
     apk add --no-cache python3
     apk add --no-cache ruby
 
-The image is **256 MB** on `x86_64`.  If you install all the programming
-languages, the container will become **1.35 GB** on `x86_64`.
+The image is **319 MB** on `x86_64`.  If you install all the programming
+languages, the container will become **1.91 GB** on `x86_64`.
 
 ## USAGE
 
