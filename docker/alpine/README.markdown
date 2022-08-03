@@ -1,4 +1,4 @@
-# CloudI Alpine Docker Example 
+# CloudI Alpine Docker Example
 
 This image includes all the integration tests and all the programming language
 integration enabled, but without additional programming languages installed
@@ -7,17 +7,17 @@ integration enabled, but without additional programming languages installed
     docker exec -it cloudi_alpine /bin/sh
     apk add --no-cache go
     apk add --no-cache ghc cabal
-    apk add --no-cache openjdk8
+    apk add --no-cache openjdk11
     apk add --no-cache nodejs
     apk add --no-cache ocaml
     apk add --no-cache perl
-    apk add --no-cache php7
+    apk add --no-cache php8
     apk add --no-cache python3
     apk add --no-cache ruby
 
-The image is **327 MB** on `x86_64`.
+The image is **306 MB** on `x86_64`.
 If you install all the programming languages,
-the container will become **1.74 GB (2.07 GB with image)** on `x86_64`.
+the container will become **1.97 GB (2.27 GB with image)** on `x86_64`.
 
 ## USAGE
 

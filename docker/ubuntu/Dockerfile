@@ -6,19 +6,19 @@ FROM ubuntu:20.04
 
 # Set the release version of CloudI
 ARG CLOUDI_VERSION
-ENV CLOUDI_VERSION ${CLOUDI_VERSION:-2.0.2}
+ENV CLOUDI_VERSION ${CLOUDI_VERSION:-2.0.4}
 
 # Set the release SHA256 checksum of CloudI
 ARG CLOUDI_SHA256
-ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-452c86bc0d0b0476e97049176eded905b01bd0ff49f76cd3e937ce33699b2225}
+ENV CLOUDI_SHA256 ${CLOUDI_SHA256:-836497e3a5e0b9869e60ae8841a1e62d4866e813a19968d8b4b7d592c8f5e551}
 
 # Set the release version of Erlang/OTP
 ARG ERLANG_OTP_VERSION
-ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-23.3}
+ENV ERLANG_OTP_VERSION ${ERLANG_OTP_VERSION:-24.3.4.2}
 
 # Set the release SHA256 checksum of Erlang/OTP
 ARG ERLANG_OTP_SHA256
-ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-3c888d8f46124e134b75a9ba5d845f079020b7198ed2de64411e183d07e9002a}
+ENV ERLANG_OTP_SHA256 ${ERLANG_OTP_SHA256:-0376d50f867a29426d47600056e8cc49c95b51ef172b6b9030628e35aecd46af}
 
 # Update the repository sources list and install required Ubuntu packages
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -46,7 +46,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 # Build and Install Erlang/OTP
 RUN curl -fSL -o otp_src.tar.gz \
-    "http://erlang.org/download/otp_src_${ERLANG_OTP_VERSION}.tar.gz" \
+    "https://github.com/erlang/otp/releases/download/OTP-${ERLANG_OTP_VERSION}/otp_src_${ERLANG_OTP_VERSION}.tar.gz" \
     && echo "${ERLANG_OTP_SHA256}  otp_src.tar.gz" | sha256sum -c - \
     && tar zxvf otp_src.tar.gz \
     && rm -f otp_src.tar.gz \

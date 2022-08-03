@@ -1,4 +1,4 @@
-# CloudI Ubuntu Docker Example 
+# CloudI Ubuntu Docker Example
 
 This image includes all the integration tests and the programming language
 integration enabled by default:
@@ -12,7 +12,7 @@ integration enabled by default:
 * Python
 * Ruby
 
-The image is **1.73 GB** on `x86_64`.  If you need a smaller image, use the
+The image is **1.84 GB** on `x86_64`.  If you need a smaller image, use the
 [Alpine Linux](https://github.com/CloudI/containers/tree/master/docker/alpine#readme) default image.
 
 ## USAGE
