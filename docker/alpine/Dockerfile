@@ -2,7 +2,7 @@
 # ex: set fenc=utf-8 sts=4 ts=4 sw=4 et nomod:
 
 # Set the base image to Alpine
-FROM alpine:3.16
+FROM alpine:3.17
 
 RUN apk add --no-cache cloudi
 
