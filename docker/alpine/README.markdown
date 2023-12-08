@@ -7,17 +7,18 @@ integration enabled, but without additional programming languages installed
     docker exec -it cloudi_alpine /bin/sh
     apk add --no-cache go
     apk add --no-cache ghc
-    apk add --no-cache openjdk11
+    apk add --no-cache openjdk17
     apk add --no-cache nodejs
     apk add --no-cache ocaml
     apk add --no-cache perl
     apk add --no-cache php
     apk add --no-cache python3
     apk add --no-cache ruby
+    apk add --no-cache rust
 
-The image is **379 MB** on `x86_64`.
+The image is **420 MB** on `x86_64`.
 If you install all the programming languages,
-the container will become **1.97 GB (2.34 GB with image)** on `x86_64`.
+the container will become **2.47 GB (2.89 GB with image)** on `x86_64`.
 
 ## USAGE
 
